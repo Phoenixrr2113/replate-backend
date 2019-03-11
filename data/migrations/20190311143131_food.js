@@ -7,7 +7,7 @@ exports.up = function(knex, Promise) {
 			.notNullable()
 			.unique();
 
-		table.integer('quantity in lbs');
+		table.integer('quantity_lbs');
 		table.varchar('comment');
 
 		table
