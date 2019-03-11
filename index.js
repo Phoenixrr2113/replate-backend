@@ -1,17 +1,6 @@
-const express = require('express');
-const helmet = require('helmet');
-const knex = require('knex');
+require('dotenv').config();
 
-const server = express();
+const server = require('./api/server.js');
 
-server.use(express.json());
-server.use(helmet());
-
-server.get('/', (req, res) => {
-	res.send('Welcome To Replate');
-});
-
-const port = 5000;
-server.listen(port, function() {
-	console.log(`\n======= Web API Listening on ${port} =======\n`);
-});
+const port = process.env.PORT || 5000;
+server.listen(port, () => console.log(`\n** server up on port ${port} **\n`));
