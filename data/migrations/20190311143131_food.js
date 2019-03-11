@@ -3,11 +3,11 @@ exports.up = function(knex, Promise) {
 		table.increments();
 
 		table
-			.string('food_name')
+			.string('name')
 			.notNullable()
 			.unique();
 
-		table.integer('quantity');
+		table.integer('quantity in lbs');
 		table.varchar('comment');
 
 		table

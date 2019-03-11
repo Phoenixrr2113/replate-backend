@@ -3,22 +3,14 @@ exports.up = function(knex, Promise) {
 		table.increments();
 
 		table
-			.string('business_name', 255)
+			.string('name', 255)
 			.notNullable()
 			.unique();
 
-		table.string('business_address', 255).notNullable();
+		table.string('address', 255).notNullable();
 		table.integer('phone', 255).notNullable();
 		table.string('email', 255).notNullable();
 		table.string('password', 255).notNullable();
-
-		table
-			.integer('food_id')
-			.unsigned()
-			.references('id')
-			.inTable('food')
-			.onDelete('CASCADE')
-			.onUpdate('CASCADE');
 	});
 };
 

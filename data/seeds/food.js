@@ -4,22 +4,25 @@ exports.seed = function(knex, Promise) {
 		.truncate()
 		.then(function() {
 			// Inserts seed entries
-			return knex('table_name').insert([
+			return knex('food').insert([
 				{
 					id: 1,
-					food_name: 'mashed potatos',
+					name: 'mashed potatos',
+					quantity: '10',
 					comment: 'needs to be picked up by 12/11/2019',
 					business_id: 1,
 				},
 				{
 					id: 2,
-					food_name: 'canned goods',
+					name: 'canned goods',
+					quantity: '30',
 					comment: 'needs to be picked up by 12/11/2019',
 					business_id: 1,
 				},
 				{
-					id: 2,
-					food_name: 'roast beef',
+					id: 3,
+					name: 'roast beef',
+					quantity: '5',
 					comment: 'needs to be picked up by 12/11/2019',
 					business_id: 1,
 				},
