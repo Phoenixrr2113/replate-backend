@@ -10,14 +10,35 @@ router.post('/register', (req, res) => {
 	const hash = bcrypt.hashSync(user.password, 10);
 	user.password = hash;
 
-	if (user.usertype === 'volunteer') {
-		Volunteer.add(user)
-			.then(newVolunteer => {
-				res.status(201).json(newVolunteer);
-			})
-			.catch(error => {
-				res.status(500).json(error);
-			});
+	switch (user.usertype) {
+		case 'volunteer':
+			return Volunteer.add(user)
+				.then(newVolunteer => {
+					res.status(201).json(newVolunteer);
+				})
+				.catch(error => {
+					res.status(500).json(error);
+				});
+
+		case 'business':
+			return Business.add(user)
+				.then(newBusiness => {
+					res.status(201).json(newBusiness);
+				})
+				.catch(error => {
+					res.status(500).json(error);
+				});
+
+		case 'foodbank':
+			return Foodbank.add(user)
+				.then(newFoodbank => {
+					res.status(201).json(newFoodbank);
+				})
+				.catch(error => {
+					res.status(500).json(error);
+				});
+		default:
+			return;
 	}
 });
 
