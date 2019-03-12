@@ -1,11 +1,11 @@
 const router = require('express').Router();
 
-const Business = require('./businessModel');
+const Volunteer = require('./volunteerModel');
 
 router.get('/', (req, res) => {
-	Business.find()
-		.then(business => {
-			res.json({ business });
+	Volunteer.find()
+		.then(volunteer => {
+			res.json({ volunteer });
 		})
 		.catch(err => res.send(err));
 });
