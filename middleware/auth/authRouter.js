@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 
 const Volunteer = require('../helpers/volunteers/volunteerModel');
 const Business = require('../helpers/business/businessModel');
-const Pantry = require('../helpers/pantry/pantryModel');
+const Foodbank = require('../helpers/foodbank/foodbankModel');
 
 router.post('/register', (req, res) => {
 	let user = req.body;
