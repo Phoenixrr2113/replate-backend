@@ -12,7 +12,7 @@ exports.up = function(knex, Promise) {
 			.unique();
 
 		table.string('address', 255).notNullable();
-		table.integer('cell', 255).notNullable();
+		table.integer('phone', 255).notNullable();
 		table.string('email', 255).notNullable();
 		table.string('password', 255).notNullable();
 	});

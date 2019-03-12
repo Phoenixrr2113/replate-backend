@@ -7,17 +7,17 @@ exports.seed = function(knex, Promise) {
 			return knex('business').insert([
 				{
 					id: 1,
-					name: 'Publix',
+					businessName: 'Publix',
 					phone: 4444444444,
-					address: '1 main st, miami fl, 32321',
+					businessAddr: '1 main st, miami fl, 32321',
 					email: 'support@publix.com',
 					password: 'pass',
 				},
 				{
 					id: 2,
-					name: 'CVS',
+					businessName: 'CVS',
 					phone: 2222222222,
-					address: '13 main st, miami fl, 32321',
+					businessAddr: '13 main st, miami fl, 32321',
 					email: 'support@cvs.com',
 					password: 'pass',
 				},

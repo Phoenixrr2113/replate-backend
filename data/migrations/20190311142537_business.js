@@ -3,11 +3,11 @@ exports.up = function(knex, Promise) {
 		table.increments();
 
 		table
-			.string('name', 255)
+			.string('businessName', 255)
 			.notNullable()
 			.unique();
 
-		table.string('address', 255).notNullable();
+		table.string('businessAddr', 255).notNullable();
 		table.integer('phone', 255).notNullable();
 		table.string('email', 255).notNullable();
 		table.string('password', 255).notNullable();
