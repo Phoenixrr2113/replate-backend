@@ -10,13 +10,15 @@ router.post('/register', (req, res) => {
 	const hash = bcrypt.hashSync(user.password, 10);
 	user.password = hash;
 
-	Users.add(user)
-		.then(saved => {
-			res.status(201).json(saved);
-		})
-		.catch(error => {
-			res.status(500).json(error);
-		});
+	if (user.usertype === 'volunteer') {
+		Volunteer.add(user)
+			.then(newVolunteer => {
+				res.status(201).json(newVolunteer);
+			})
+			.catch(error => {
+				res.status(500).json(error);
+			});
+	}
 });
 
 router.post('/login', (req, res) => {

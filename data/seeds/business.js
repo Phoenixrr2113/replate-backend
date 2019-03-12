@@ -12,6 +12,7 @@ exports.seed = function(knex, Promise) {
 					businessAddr: '1 main st, miami fl, 32321',
 					email: 'support@publix.com',
 					password: 'pass',
+					usertype: 'business',
 				},
 				{
 					id: 2,
@@ -20,6 +21,7 @@ exports.seed = function(knex, Promise) {
 					businessAddr: '13 main st, miami fl, 32321',
 					email: 'support@cvs.com',
 					password: 'pass',
+					usertype: 'business',
 				},
 			]);
 		});

@@ -13,6 +13,7 @@ exports.seed = function(knex, Promise) {
 					phone: 9412223333,
 					email: 'randy@google.com',
 					password: 'pass',
+					usertype: 'volunteer',
 				},
 				{
 					id: 2,
@@ -22,6 +23,7 @@ exports.seed = function(knex, Promise) {
 					phone: 9412223333,
 					email: 'joe@google.com',
 					password: 'pass',
+					usertype: 'volunteer',
 				},
 			]);
 		});

@@ -11,6 +11,7 @@ exports.up = function(knex, Promise) {
 		table.integer('phone', 255).notNullable();
 		table.string('email', 255).notNullable();
 		table.string('password', 255).notNullable();
+		table.string('usertype', 255).notNullable();
 	});
 };
 
